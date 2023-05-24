@@ -1,6 +1,6 @@
 {
   "name": "postcss-tpxtorem",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "postcss插件-将css样式表内的的px属性转换为rem",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",

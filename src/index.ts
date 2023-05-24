@@ -2,15 +2,30 @@
  * @Author: kayinn许小强 79544105@qq.com
  * @Date: 2023-05-24 10:01:40
  * @LastEditors: kayinn许小强 79544105@qq.com
- * @LastEditTime: 2023-05-24 15:33:20
+ * @LastEditTime: 2023-05-24 17:10:24
  * @FilePath: /postcss-torem/src/index.ts
  * @Description: postcss插件 - 将样式表的px单位转换为rem
  */
-import {
-    Configs,
-    ExportModule,
-    regexpCallback
-} from './interface'
+interface Configs {
+    baseNum: number;
+    digit: number;
+}
+
+interface Decl {
+    value: string;
+    [propName: string]: any;
+}
+
+interface ExportModule {
+    postcssPlugin: string;
+    Once: (root:string) => void;
+    Declaration: (decl:Decl) => void;
+}
+
+interface regexpCallback {
+    (a: string, b: string): string;
+}
+
 /**
  * @description: px转rem单位换算
  * @param {Number} baseNum 换算基数
